@@ -13,5 +13,15 @@ pipeline {
         sh (script: './gradlew build')
       }
     }
+
+    stage('Build: Gradle') {
+      steps {
+        sh (script: '''
+          sudo docker images
+          sudo docker build -t devops-springboot-demo:1.0.0 .
+          sudo docker images
+        ''')
+      }
+    }
   }
 }
