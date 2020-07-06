@@ -36,7 +36,7 @@ pipeline {
           buildInfo = rtGradle.run  buildFile: 'build.gradle', tasks: 'build artifactoryPublish'
 
           buildInfo.env.capture = true
-          buildInfo.name = 'devops-springboot-demo-1.0.${BUILD_NUMBER}'
+          buildInfo.name = 'devops-springboot-demo'
           server.publishBuildInfo buildInfo
         }
       }
@@ -55,7 +55,7 @@ pipeline {
                   rtMaven.tool = 'maven'
                   buildInfo = rtMaven.run pom: 'pom.xml', goals: "clean install -Dlicense.skip=true"
                   buildInfo.env.capture = true
-                  buildInfo.name = 'devops-springboot-demo-1.0.${BUILD_NUMBER}'
+                  buildInfo.name = 'devops-springboot-demo'
                   server.publishBuildInfo buildInfo
                 }
               }
