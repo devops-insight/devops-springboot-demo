@@ -49,7 +49,7 @@ pipeline {
                   def buildInfo = Artifactory.newBuildInfo()
                   def rtMaven = Artifactory.newMavenBuild()
                   rtMaven.resolver server: server, releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot'
-                  rtMaven.deployer server: server, releaseRepo: 'libs-release-local, snapshotRepo: 'libs-snapshot-local'
+                  rtMaven.deployer server: server, releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local'
                  // rtMaven.deployer.artifactDeploymentPatterns.addInclude("devops-springboot-demo*")
                   rtMaven.deployer.deployArtifacts (true)
                   rtMaven.tool = 'maven'
