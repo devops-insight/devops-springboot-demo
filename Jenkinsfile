@@ -28,10 +28,8 @@ pipeline {
           def server = Artifactory.server "artifactory"
           def buildInfo = Artifactory.newBuildInfo()
           rtGradle = Artifactory.newGradleBuild()
-          rtGradle.resolver server: server, releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot'
+          //rtGradle.resolver server: server, releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot'
           rtGradle.deployer server: server, releaseRepo: 'gradle-dev-local', snapshotRepo: 'gradle-release-local'
-          //rtGradle.deployer.artifactDeploymentPatterns.addInclude("devops-springboot-demo*")
-
           rtGradle.tool = 'gradle'
           buildInfo = rtGradle.run  buildFile: 'build.gradle', tasks: 'build artifactoryPublish'
 
@@ -48,7 +46,7 @@ pipeline {
                   def server = Artifactory.server "artifactory"
                   def buildInfo = Artifactory.newBuildInfo()
                   def rtMaven = Artifactory.newMavenBuild()
-                  rtMaven.resolver server: server, releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot'
+                 // rtMaven.resolver server: server, releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot'
                   rtMaven.deployer server: server, releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local'
                  // rtMaven.deployer.artifactDeploymentPatterns.addInclude("devops-springboot-demo*")
                   rtMaven.deployer.deployArtifacts (true)
