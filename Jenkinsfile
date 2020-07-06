@@ -28,7 +28,7 @@ pipeline {
           def server = Artifactory.server "artifactory"
           def buildInfo = Artifactory.newBuildInfo()
           rtGradle = Artifactory.newGradleBuild()
-          rtGradle.deployer server: server, releaseRepo: 'fcp-webapp-release-local', snapshotRepo: 'fcp-webapp-snap-local'
+          rtGradle.deployer server: server, releaseRepo: 'gradle-dev-local', snapshotRepo: 'gradle-release-local'
           rtGradle.deployer.artifactDeploymentPatterns.addInclude("devops-springboot-demo*")
 
           rtGradle.tool = 'gradle'
