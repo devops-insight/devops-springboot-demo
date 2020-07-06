@@ -32,7 +32,7 @@ pipeline {
           rtGradle.deployer.artifactDeploymentPatterns.addInclude("devops-springboot-demo*")
 
           rtGradle.tool = 'gradle'
-          buildInfo = rtGradle.run  buildFile: 'build.gradle', tasks: 'artifactoryPublish'
+          buildInfo = rtGradle.run  buildFile: 'build.gradle', tasks: 'build artifactoryPublish'
 
           buildInfo.env.capture = true
           buildInfo.name = 'devops-springboot-demo'
