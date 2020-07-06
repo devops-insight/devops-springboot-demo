@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>au.com.cba.fcp</groupId>
 	<artifactId>devops-springboot-demo</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.3</version>
 	<packaging>war</packaging>
 	<name>devops-springboot-demo</name>
 	<description>Demo Java Web Spring Boot application.</description>
