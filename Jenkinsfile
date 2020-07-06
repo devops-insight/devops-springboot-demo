@@ -49,9 +49,8 @@ pipeline {
                  // rtMaven.resolver server: server, releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot'
                   rtMaven.deployer server: server, releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local'
                  // rtMaven.deployer.artifactDeploymentPatterns.addInclude("devops-springboot-demo*")
-                  rtMaven.deployer.deployArtifacts (true)
                   rtMaven.tool = 'maven'
-                  buildInfo = rtMaven.run pom: 'pom.xml', goals: "clean install -Dlicense.skip=true"
+                  buildInfo = rtMaven.run pom: 'devops-springboot-demo/pom.xml', goals: "clean install -Dlicense.skip=true"
                   buildInfo.env.capture = true
                   buildInfo.name = 'devops-springboot-demo'
                   server.publishBuildInfo buildInfo
