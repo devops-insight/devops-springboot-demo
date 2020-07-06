@@ -40,6 +40,7 @@ pipeline {
       }
     }
 
+/*
        stage ('Publish to Artifactory | Maven'){
               steps {
                 script {
@@ -58,6 +59,7 @@ pipeline {
                 }
               }
             }
+            */
   }
 }
 
