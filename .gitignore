@@ -1,9 +1,9 @@
 HELP.md
-**.gradle
 *.class
 **/bin
 **/lib
 **/build
+**/target
 *.jar
 build/
 !**/src/main/**
