@@ -17,8 +17,7 @@ pipeline {
     stage('Build: application') {
       steps {
         sh (script: '''
-         chmod u+x gradlew
-         ./gradlew build
+         gradle clean build
         ''')
       }
     }
