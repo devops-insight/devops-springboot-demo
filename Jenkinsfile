@@ -1,11 +1,4 @@
 pipeline {
-
-  environment {
-    repoName = 'fincrime/devops-springboot-demo'
-    repoCredentialsId = 'dockerhub-token'
-    dockerImage = ''
-  }
-
   agent any
   stages {
     stage('Verify Branch') {

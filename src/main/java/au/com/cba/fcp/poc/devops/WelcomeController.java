@@ -12,7 +12,7 @@ public class WelcomeController {
 
     @RequestMapping("/welcome")
     public String index() {
-        String message =  String.format("Greetings from DevOps Team. Environment: %s Get Set Go..!", env);
+        String message =  String.format("Greetings from DevOps Team. You are in '%s' Environment :: Get Set Go..!", env);
         return message;
     }
 
