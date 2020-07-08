@@ -10,7 +10,7 @@ public class WelcomeController {
     @Value("${spring.env}")
     private String env;
 
-    @RequestMapping("/")
+    @RequestMapping("/welcome")
     public String index() {
         String message =  String.format("Greetings from DevOps Team. Environment: %s Get Set Go..!", env);
         return message;
