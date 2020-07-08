@@ -58,4 +58,40 @@
 		</plugins>
 	</build>
 
+	<profiles>
+	<profile>
+		<id>jar</id>
+		<activation>
+			<activeByDefault>true</activeByDefault>
+		</activation>
+		<properties>
+			<packaging.type>jar</packaging.type>
+		</properties>
+	</profile>
+	<profile>
+		<id>war</id>
+		<properties>
+			<packaging.type>war</packaging.type>
+		</properties>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-tomcat</artifactId>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>
+		<distributionManagement>
+			<repository>
+				<id>artifactory</id>
+				<name>Artifactory</name>
+				<url>http://fcp-lab-jenkins.australiaeast.cloudapp.azure.com:8082/artifactory/libs-release-local</url>
+			</repository>
+			<snapshotRepository>
+				<id>artifactorysnapshots</id>
+				<name>Artifactory-Snapshots</name>
+				<url>http://fcp-lab-jenkins.australiaeast.cloudapp.azure.com:8082/artifactory/libs-snapshot-local</url>
+			</snapshotRepository>
+		</distributionManagement>
+	</profile>
+	</profiles>
 </project>
