@@ -1,5 +1,5 @@
 spring:
-  env: "#{Octopus.Environment.Name}"
+  env: #{env_name}
   h2:
     console:
       enabled: true
