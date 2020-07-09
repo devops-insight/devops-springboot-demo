@@ -13,11 +13,14 @@ public class HomePageController {
     @Value("${spring.env}")
     private String env;
 
+    @Value("${spring.env_id}")
+    private String env_id;
+
     //@GetMapping("/home")
     @GetMapping("/login")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
-        model.addAttribute("env", env);
+        model.addAttribute("env", env+"_"+env_id);
         return "home_page";
     }
 
