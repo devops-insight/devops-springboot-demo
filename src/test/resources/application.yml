@@ -1,5 +1,6 @@
 spring:
-  env: testing
+  env: SIT
+  env_id: T6ID123
   h2:
     console:
       enabled: true
