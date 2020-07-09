@@ -1,6 +1,6 @@
 spring:
   env: SIT
-  env_id: T6ID123
+  release_no: T6ID123
   h2:
     console:
       enabled: true

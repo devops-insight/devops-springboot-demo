@@ -1,6 +1,6 @@
 spring:
   env: #{Octopus.Environment.Name}
-  env_id: #{Octopus.Environment.Id}
+  release_no: #{Octopus.Release.Number}
   h2:
     console:
       enabled: true
