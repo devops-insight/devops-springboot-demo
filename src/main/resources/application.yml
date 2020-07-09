@@ -1,5 +1,5 @@
 spring:
-  env: #{env_name}
+  env: #{Octopus.Environment.Name}
   env_id: #{Octopus.Environment.Id}
   h2:
     console:
