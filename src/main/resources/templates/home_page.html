@@ -3,9 +3,12 @@
     <head>
         <title>DevOps - Pipeline Demo</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!-- Bootstrap -->
+        <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet" />
+        <link type="text/css" href="css/Site.css" rel="stylesheet" />
     </head>
     <body>
-    <H1><p th:text="'Welcome to the Magic world of DevOps!'" /></H1>
-     <H2>   <p th:text="'Environment : ' + ${env}" /></H2>
+    <H1><p th:text="' DevOps Pipeline'" /></H1>
+     <H3>   <p th:text=" ${env}" /></H3>
     </body>
 </html>
