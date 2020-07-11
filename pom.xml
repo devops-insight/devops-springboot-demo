@@ -69,11 +69,11 @@
 						</goals>
 						<configuration>
 							<publisher>
-								<contextUrl>http://fcp-lab-jenkins.australiaeast.cloudapp.azure.com:8082/artifactory</contextUrl>
-								<username>jenkins</username>
-								<password>Azcloud@2020</password>
-								<repoKey>libs-release-local</repoKey>
-								<snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>
+								<contextUrl>{{ARTIFACTORY_CONTEXT_URL}} </contextUrl>
+								<username>{{ARTIFACTORY_USER}}</username>
+								<password>{{ARTIFACTORY_PASSWORD}}</password>
+								<repoKey>{{ARTIFACTORY_RELEASE_REPO}}</repoKey>
+								<snapshotRepoKey>{{ARTIFACTORY_SNAPSHOT_REPO}}</snapshotRepoKey>
 							</publisher>
 						</configuration>
 					</execution>
