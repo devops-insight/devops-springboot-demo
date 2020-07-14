@@ -16,10 +16,11 @@ public class HomePageController {
     @Value("${spring.release_no}")
     private String release_no;
 
-    @GetMapping("/login")
+    @GetMapping("/")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
-        model.addAttribute("env", env+"_"+release_no);
+        model.addAttribute("env", env);
+        model.addAttribute("release_no", release_no);
         return "home_page";
     }
 }

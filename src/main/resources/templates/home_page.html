@@ -1,14 +1,28 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>DevOps - Pipeline Demo</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <!-- Bootstrap -->
-        <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet" />
-        <link type="text/css" href="css/Site.css" rel="stylesheet" />
-    </head>
-    <body>
-    <H1><p th:text="' DevOps Pipeline'" /></H1>
-     <H3>   <p th:text=" ${env}" /></H3>
-    </body>
+<head>
+    <title>DevOps - Pipeline Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- Bootstrap -->
+    <link type="text/css" href="css/bootstrap.css" rel="stylesheet"/>
+    <link type="text/css" href="css/Site.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-4">
+
+        <H1><p th:text="' DevOps Pipeline'"/></H1>
+    </div>
+</div>
+<table>
+    <tr>
+        <th> Environment</th>
+        <th> Release No</th>
+    </tr>
+    <tr>
+        <td th:text=" ${env}"></td>
+        <td th:text=" ${release_no}"></td>
+    </tr>
+</table>
+</body>
 </html>
