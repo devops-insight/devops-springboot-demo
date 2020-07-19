@@ -1,0 +1,12 @@
+spring:
+  env: SIT
+  release_no: T6ID123
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  datasource:
+    url: jdbc:h2:mem:testdb
+    dbcp2:
+      driver-class-name: org.h2.Driver
