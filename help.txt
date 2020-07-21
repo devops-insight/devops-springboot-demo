@@ -1,0 +1,35 @@
+Jenkins Pipeline configuration
+
+Manage Jenkins -> Configure System -> Global Properties
+  ARTIFACTORY_CONTEXT_URL
+  ARTIFACTORY_PASSWORD
+  ARTIFACTORY_RELEASE_REPO
+  ARTIFACTORY_SNAPSHOT_REPO
+  ARTIFACTORY_USER
+
+JFrog (Configure Artifactory here)
+
+Jenkins -> Pipelines -> configure
+Source Code Management
+  git 
+Build Triggers
+  GitHub hook trigger for GITScm polling
+Build Environment
+  Bindings
+    OctopusAPIKey
+    Artifactory Configuration
+
+Maven3-Artifactory Integration
+
+Build
+  Invoke Top-level maven targets
+    Maven Version : maven
+    Goals: versions:set -DnewVersion=1.0.$BUILD_NUMBER   clean package install deploy
+  Execute shell:
+    #!/bin/bash
+    octo create-release \
+    --apiKey $OctopusAPIKey \
+    --server https://fcp-devops.octopus.app \
+    --space sanctions \
+    --project demo-2020-07-15 \
+    --progress 
